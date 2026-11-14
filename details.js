@@ -13,8 +13,8 @@
 window.WEDDING = {
   // ---- The two of you -------------------------------------------------
   couple: {
-    one: "Tanner Bessinger",          // TODO: first name
-    two: "Madison Parenti",          // TODO: first name
+    one: "Tanner Bessinger",
+    two: "Madison Parenti",
   },
 
   // Ceremony start, in resort local time. Quintana Roo is UTC-5 all year
