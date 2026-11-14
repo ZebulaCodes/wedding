@@ -88,6 +88,6 @@ window.WEDDING = {
     { q: "What should I wear?", a: "Beach formal / tropical cocktail attire. Think light fabrics and bright colors — sundresses, linen shirts and slacks. The ceremony is on the sand, so skip the stilettos!" },
     { q: "What's the weather like in April?", a: "Warm and sunny — typically highs in the mid-80s °F (around 30 °C) and lows in the low 70s. Bring sunscreen (reef-safe is best), sunglasses, and a light layer for the evening." },
     { q: "Do I need to bring cash?", a: "The resort is all-inclusive, so food and drinks are covered. A little cash (US dollars or Mexican pesos) is handy for tips, excursions, and shopping." },
-    { q: "Do I have to stay at the resort?", a: "We'd love for everyone to stay with us! Wedding events are on resort property, and staying elsewhere may require a day pass. Reach out to Mandy with any questions." },
+    { q: "Do I have to stay at the resort?", a: "In order to attend and have access to the wedding, you will need to book a stay at either the Barceló Maya Riviera or the Barceló Maya Palace." },
   ],
 };

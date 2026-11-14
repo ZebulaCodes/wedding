@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 410 650" >
+<defs>
+<filter id="wc" x="-8%" y="-8%" width="116%" height="116%" color-interpolation-filters="sRGB">
+  <feTurbulence type="fractalNoise" baseFrequency="0.03" numOctaves="3" seed="9" result="n1"/>
+  <feDisplacementMap in="SourceGraphic" in2="n1" scale="5" xChannelSelector="R" yChannelSelector="G" result="d"/>
+  <feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="2" seed="14" result="g"/>
+  <feColorMatrix in="g" type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  -0.45 0 0 0 1.2" result="gA"/>
+  <feTurbulence type="fractalNoise" baseFrequency="0.012" numOctaves="2" seed="18" result="m"/>
+  <feColorMatrix in="m" type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0.9 0 0 0 0.45" result="mA"/>
+  <feComposite in="d" in2="gA" operator="in" result="t1"/>
+  <feComposite in="t1" in2="mA" operator="in" result="t2"/>
+  <feMorphology in="d" operator="erode" radius="1.6" result="er"/>
+  <feComposite in="d" in2="er" operator="out" result="rim"/>
+  <feColorMatrix in="rim" type="matrix" values="0.55 0 0 0 0  0 0.55 0 0 0  0 0 0.55 0 0  0 0 0 0.55 0" result="rimD"/>
+  <feMerge><feMergeNode in="t2"/><feMergeNode in="rimD"/></feMerge>
+</filter>
+<radialGradient id="lg" cx=".5" cy=".5" r=".62"><stop offset="0" stop-color="#b5dcbf"/><stop offset=".5" stop-color="#6bb08a"/><stop offset="1" stop-color="#3a7f62"/></radialGradient>
+<linearGradient id="shade" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#0b2a24" stop-opacity=".38"/><stop offset=".5" stop-color="#0b2a24" stop-opacity="0"/><stop offset="1" stop-color="#ffffff" stop-opacity=".08"/></linearGradient>
+<clipPath id="clip"><path d="M206 560 C 120 540, 30 470, 14 360 C -2 250, 40 130, 120 80 C 160 56, 196 70, 200 120 C 212 66, 262 52, 304 80 C 380 130, 410 250, 392 360 C 376 470, 290 540, 206 560 Z"/></clipPath>
+<mask id="m"><rect x="-40" y="-40" width="500" height="700" fill="#fff"/><path d="M178 175 C 130 165, 60 121, -30 103 L-30 125.8 C 60 135, 130 179, 178 175 Z" fill="#000"/><path d="M230 181 C 280 169, 350 125, 440 107 L440 131 C 350 141, 280 185, 230 181 Z" fill="#000"/><path d="M178 245 C 130 235, 60 199, -30 179 L-30 205.6 C 60 215, 130 249, 178 245 Z" fill="#000"/><path d="M230 251 C 280 239, 350 203, 440 183 L440 211 C 350 221, 280 255, 230 251 Z" fill="#000"/><path d="M178 318 C 130 308, 60 280, -30 259 L-30 287.5 C 60 297, 130 322, 178 318 Z" fill="#000"/><path d="M230 324 C 280 312, 350 284, 440 263 L440 293 C 350 303, 280 328, 230 324 Z" fill="#000"/><path d="M178 392 C 130 382, 60 362, -30 342 L-30 368.6 C 60 378, 130 396, 178 392 Z" fill="#000"/><path d="M230 398 C 280 386, 350 366, 440 346 L440 374 C 350 384, 280 402, 230 398 Z" fill="#000"/><path d="M178 462 C 130 452, 60 440, -30 422 L-30 444.8 C 60 454, 130 466, 178 462 Z" fill="#000"/><path d="M230 468 C 280 456, 350 444, 440 426 L440 450 C 350 460, 280 472, 230 468 Z" fill="#000"/><ellipse cx="150" cy="222" rx="8" ry="15" transform="rotate(-25 150 222)" fill="#000"/><ellipse cx="148" cy="296" rx="9" ry="16" transform="rotate(-25 148 296)" fill="#000"/><ellipse cx="152" cy="370" rx="8" ry="14" transform="rotate(-25 152 370)" fill="#000"/><ellipse cx="262" cy="230" rx="8" ry="15" transform="rotate(25 262 230)" fill="#000"/><ellipse cx="266" cy="304" rx="9" ry="16" transform="rotate(25 266 304)" fill="#000"/><ellipse cx="260" cy="378" rx="8" ry="14" transform="rotate(25 260 378)" fill="#000"/></mask>
+</defs>
+<g filter="url(#wc)">
+<path d="M204 556 C 208 590, 200 615, 190 640" stroke="#3f7a5f" stroke-width="13" fill="none" stroke-linecap="round"/>
+<g mask="url(#m)">
+<path d="M206 560 C 120 540, 30 470, 14 360 C -2 250, 40 130, 120 80 C 160 56, 196 70, 200 120 C 212 66, 262 52, 304 80 C 380 130, 410 250, 392 360 C 376 470, 290 540, 206 560 Z" fill="url(#lg)"/>
+<g clip-path="url(#clip)"><path d="M206 560 C 120 540, 30 470, 14 360 C -2 250, 40 130, 120 80 C 160 56, 196 70, 200 120 C 212 66, 262 52, 304 80 C 380 130, 410 250, 392 360 C 376 470, 290 540, 206 560 Z" fill="url(#shade)"/>
+<path d="M202 210 C 150 200, 80 163, 0 155" stroke="#b5dcbf" stroke-width="3.2" fill="none" opacity=".6"/>
+<path d="M206 214 C 260 202, 330 165, 410 157" stroke="#b5dcbf" stroke-width="3.2" fill="none" opacity=".6"/>
+<path d="M202 282 C 150 272, 80 243, 0 235" stroke="#b5dcbf" stroke-width="3.2" fill="none" opacity=".6"/>
+<path d="M206 286 C 260 274, 330 245, 410 237" stroke="#b5dcbf" stroke-width="3.2" fill="none" opacity=".6"/>
+<path d="M202 355 C 150 345, 80 324, 0 316" stroke="#b5dcbf" stroke-width="3.2" fill="none" opacity=".6"/>
+<path d="M206 359 C 260 347, 330 326, 410 318" stroke="#b5dcbf" stroke-width="3.2" fill="none" opacity=".6"/>
+<path d="M202 428 C 150 418, 80 405, 0 397" stroke="#b5dcbf" stroke-width="3.2" fill="none" opacity=".6"/>
+<path d="M206 432 C 260 420, 330 407, 410 399" stroke="#b5dcbf" stroke-width="3.2" fill="none" opacity=".6"/>
+<path d="M202 500 C 150 490, 80 485, 0 477" stroke="#b5dcbf" stroke-width="3.2" fill="none" opacity=".6"/>
+<path d="M206 504 C 260 492, 330 487, 410 479" stroke="#b5dcbf" stroke-width="3.2" fill="none" opacity=".6"/>
+</g>
+<path d="M200 124 C 210 260, 210 420, 205 556" stroke="#3f7a5f" stroke-width="8" fill="none" stroke-linecap="round"/>
+<path d="M204 134 C 213 260, 213 420, 208 545" stroke="#b5dcbf" stroke-width="2" fill="none" opacity=".6"/>
+</g></g>
+</svg>
