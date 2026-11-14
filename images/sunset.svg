@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMax slice">
+<defs>
+<linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ff7aa2"/><stop offset=".38" stop-color="#ff9a76"/><stop offset=".62" stop-color="#ffc06b"/><stop offset=".72" stop-color="#ffd98a"/></linearGradient>
+<linearGradient id="sun" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff2b0"/><stop offset="1" stop-color="#ff8f5a"/></linearGradient>
+<linearGradient id="sea" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2cb5b0"/><stop offset="1" stop-color="#127c86"/></linearGradient>
+<mask id="sunbands"><rect width="1600" height="900" fill="#fff"/>
+<rect x="0" y="470" width="1600" height="5" fill="#000"/>
+<rect x="0" y="500" width="1600" height="8" fill="#000"/>
+<rect x="0" y="528" width="1600" height="11" fill="#000"/>
+<rect x="0" y="556" width="1600" height="14" fill="#000"/>
+<rect x="0" y="586" width="1600" height="17" fill="#000"/>
+</mask></defs>
+<rect width="1600" height="900" fill="url(#sky)"/>
+<circle cx="800" cy="610" r="250" fill="url(#sun)" mask="url(#sunbands)"/>
+<g transform="translate(260 210) scale(1)" fill="#fff" opacity=".55"><ellipse cx="0" cy="0" rx="110" ry="22"/><ellipse cx="40" cy="-14" rx="60" ry="24"/><ellipse cx="-45" cy="-6" rx="45" ry="18"/></g>
+<g transform="translate(1250 160) scale(1.3)" fill="#fff" opacity=".55"><ellipse cx="0" cy="0" rx="110" ry="22"/><ellipse cx="40" cy="-14" rx="60" ry="24"/><ellipse cx="-45" cy="-6" rx="45" ry="18"/></g>
+<g transform="translate(1000 300) scale(0.7)" fill="#fff" opacity=".55"><ellipse cx="0" cy="0" rx="110" ry="22"/><ellipse cx="40" cy="-14" rx="60" ry="24"/><ellipse cx="-45" cy="-6" rx="45" ry="18"/></g>
+<rect x="0" y="640" width="1600" height="260" fill="url(#sea)"/>
+<path d="M0 675 q 50 -12 100 0 t 100 0 q 50 -12 100 0 t 100 0 q 50 -12 100 0 t 100 0 q 50 -12 100 0 t 100 0 q 50 -12 100 0 t 100 0 q 50 -12 100 0 t 100 0 q 50 -12 100 0 t 100 0 q 50 -12 100 0 t 100 0" stroke="#bff3ec" stroke-width="4" fill="none" opacity="0.35"/>
+<path d="M0 715 q 50 -12 100 0 t 100 0 q 50 -12 100 0 t 100 0 q 50 -12 100 0 t 100 0 q 50 -12 100 0 t 100 0 q 50 -12 100 0 t 100 0 q 50 -12 100 0 t 100 0 q 50 -12 100 0 t 100 0 q 50 -12 100 0 t 100 0" stroke="#bff3ec" stroke-width="4" fill="none" opacity="0.3"/>
+<path d="M0 760 q 50 -12 100 0 t 100 0 q 50 -12 100 0 t 100 0 q 50 -12 100 0 t 100 0 q 50 -12 100 0 t 100 0 q 50 -12 100 0 t 100 0 q 50 -12 100 0 t 100 0 q 50 -12 100 0 t 100 0 q 50 -12 100 0 t 100 0" stroke="#bff3ec" stroke-width="4" fill="none" opacity="0.25"/>
+<path d="M0 810 q 50 -12 100 0 t 100 0 q 50 -12 100 0 t 100 0 q 50 -12 100 0 t 100 0 q 50 -12 100 0 t 100 0 q 50 -12 100 0 t 100 0 q 50 -12 100 0 t 100 0 q 50 -12 100 0 t 100 0 q 50 -12 100 0 t 100 0" stroke="#bff3ec" stroke-width="4" fill="none" opacity="0.2"/>
+<rect x="650.0" y="660" width="300" height="7" rx="3.5" fill="#ffe29a" opacity=".75"/>
+<rect x="690.0" y="690" width="220" height="7" rx="3.5" fill="#ffe29a" opacity=".75"/>
+<rect x="725.0" y="722" width="150" height="7" rx="3.5" fill="#ffe29a" opacity=".75"/>
+<rect x="755.0" y="756" width="90" height="7" rx="3.5" fill="#ffe29a" opacity=".75"/>
+<path d="M0 840 C 400 800, 1200 820, 1600 790 L1600 900 L0 900 Z" fill="#ffe0b8"/>
+</svg>

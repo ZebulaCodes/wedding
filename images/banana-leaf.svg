@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 580 340" >
+<path d="M30 300 C 120 140, 300 40, 560 30 C 470 110, 330 250, 150 310 C 100 325, 60 320, 30 300 Z" fill="#2fa36b"/>
+<path d="M20 310 C 160 210, 360 90, 560 30" stroke="#1b7a4b" stroke-width="6" fill="none" stroke-linecap="round"/>
+<path d="M65.0 276.1 q 37.5 52.5 -4.2 73.0" stroke="#1b7a4b" stroke-width="2.5" fill="none" opacity=".55"/>
+<path d="M110.0 248.9 q 35.0 50.0 -3.3 68.0" stroke="#1b7a4b" stroke-width="2.5" fill="none" opacity=".55"/>
+<path d="M155.0 223.8 q 32.5 47.5 -2.5 63.0" stroke="#1b7a4b" stroke-width="2.5" fill="none" opacity=".55"/>
+<path d="M200.0 199.9 q 30.0 45.0 -1.7 58.0" stroke="#1b7a4b" stroke-width="2.5" fill="none" opacity=".55"/>
+<path d="M245.0 177.0 q 27.5 42.5 -0.8 53.0" stroke="#1b7a4b" stroke-width="2.5" fill="none" opacity=".55"/>
+<path d="M290.0 154.7 q 25.0 40.0 0.0 48.0" stroke="#1b7a4b" stroke-width="2.5" fill="none" opacity=".55"/>
+<path d="M335.0 132.9 q 22.5 37.5 0.8 43.0" stroke="#1b7a4b" stroke-width="2.5" fill="none" opacity=".55"/>
+<path d="M380.0 111.6 q 20.0 35.0 1.7 38.0" stroke="#1b7a4b" stroke-width="2.5" fill="none" opacity=".55"/>
+<path d="M425.0 90.7 q 17.5 32.5 2.5 33.0" stroke="#1b7a4b" stroke-width="2.5" fill="none" opacity=".55"/>
+<path d="M470.0 70.2 q 15.0 30.0 3.3 28.0" stroke="#1b7a4b" stroke-width="2.5" fill="none" opacity=".55"/>
+<path d="M515.0 50.0 q 12.5 27.5 4.2 23.0" stroke="#1b7a4b" stroke-width="2.5" fill="none" opacity=".55"/>
+</svg>
