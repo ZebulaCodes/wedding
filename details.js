@@ -18,8 +18,8 @@ window.WEDDING = {
   },
 
   // Ceremony start, in resort local time. Quintana Roo is UTC-5 all year
-  // (no daylight saving), so keep the "-05:00" on the end.
-  ceremonyStart: "2028-04-13T17:00:00-05:00",
+  // (no daylight saving), so keep the "-06:00" on the end.
+  ceremonyStart: "2028-04-13T17:00:00-06:00",
   dateText: "Thursday, April 13, 2028",
   hashtag: "",                   // e.g. "#SaidYesInXpuHa" — leave "" to hide
 
@@ -36,31 +36,31 @@ window.WEDDING = {
   // ---- Schedule -------------------------------------------------------
   // Times are drafts. Set tentative: false once something is confirmed.
   schedule: [
-    {
+    /*{
       day: "Wednesday, April 12, 2028",
       label: "Arrival Day",
       events: [
         { time: "3:00 PM", title: "Resort Check-In", place: "Barceló Maya Riviera lobby", note: "Standard check-in time. Early check-in is subject to availability.", tentative: false },
         { time: "7:00 PM", title: "Welcome Drinks", place: "Location TBA", note: "Casual and relaxed — come say hi after your travels!", tentative: true },
       ],
-    },
+    },*/
     {
       day: "Thursday, April 13, 2028",
       label: "Wedding Day",
       highlight: true,
       events: [
         { time: "5:00 PM", title: "Ceremony", place: "Beachfront gazebo (TBA)", note: "Please arrive 15 minutes early. Sunset is around 7:30 PM.", tentative: true },
-        { time: "5:45 PM", title: "Cocktail Hour", place: "Location TBA", note: "", tentative: true },
-        { time: "7:00 PM", title: "Dinner & Reception", place: "Location TBA", note: "Dinner, toasts, and dancing under the stars.", tentative: true },
+        { time: "5:45 PM", title: "Private Dinner Reception & Open Bar", place: "Banquet Room (TBA)", note: "", tentative: true },
+        //{ time: "7:00 PM", title: "Dinner & Reception", place: "Location TBA", note: "Dinner, toasts, and dancing under the stars.", tentative: true },
       ],
     },
-    {
+    /*{
       day: "Friday, April 14, 2028",
       label: "The Morning After",
       events: [
         { time: "10:00 AM", title: "Farewell Brunch", place: "Location TBA", note: "Optional — one last hangout before folks start heading home.", tentative: true },
       ],
-    },
+    },*/
   ],
 
   // ---- Travel agent ---------------------------------------------------
