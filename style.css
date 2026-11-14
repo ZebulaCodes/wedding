@@ -112,7 +112,7 @@ a { color: inherit; }
 .hero-inner {
   position: relative; z-index: 2;
   display: grid; grid-template-columns: auto 1fr; gap: clamp(28px, 5vw, 64px);
-  align-items: center; max-width: 1000px; width: 100%;
+  align-items: center; max-width: 1180px; width: 100%;
 }
 .hero-photo { position: relative; width: clamp(240px, 30vw, 380px); }
 .hero-photo img:first-child {
@@ -129,7 +129,10 @@ a { color: inherit; }
   box-shadow: var(--shadow); text-align: center;
 }
 .eyebrow { margin: 0; text-transform: uppercase; letter-spacing: 0.22em; font-weight: 800; font-size: 0.8rem; color: var(--coral); }
-.names { margin: 4px 0 6px; font-family: var(--font-script); font-weight: 400; font-size: clamp(3rem, 7vw, 5.4rem); line-height: 1.05; color: var(--pink); }
+.names { margin: 4px 0 6px; font-family: var(--font-script); font-weight: 400; font-size: clamp(2.2rem, 5.2vw, 4.8rem); line-height: 1.1; color: var(--pink); }
+/* Each name on its own line; the & leads into the second name */
+.names [data-name-one] { display: block; white-space: nowrap; }
+.names [data-name-two] { white-space: nowrap; }
 .names .amp { color: var(--orange); }
 .hero-date { margin: 0; font-family: var(--font-display); font-weight: 700; font-size: clamp(1.15rem, 2.2vw, 1.45rem); color: var(--plum); }
 .hero-place { margin: 2px 0 18px; color: var(--muted); font-weight: 600; }
@@ -149,6 +152,7 @@ a { color: inherit; }
   .hero { padding-top: 96px; }
   .hero-inner { grid-template-columns: 1fr; justify-items: center; }
   .hero-photo { width: min(70vw, 300px); }
+  .names { font-size: min(10vw, 3.4rem); }
   .palm-left { height: 60vh; left: -110px; opacity: 0.75; }
   .palm-right { height: 50vh; right: -120px; opacity: 0.75; }
   .hero-frond { width: 220px; right: -70px; }
