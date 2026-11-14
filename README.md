@@ -14,6 +14,9 @@ Almost everything guests see lives in **`details.js`**:
 | Travel agent (Mandy) | `agent` — add `phone` to show the Call button, `bookBy` for the room-block deadline |
 | RSVP button | `rsvp.link` (e.g. a Google Form) and `rsvp.deadline` |
 | FAQ | `faq` |
+| Resort Photos page (`resort.html`) | `resortPhotos` — drop images in `images/resort/` and add an entry. Keep the credit/license on the Creative Commons photos; leave them blank for your own. |
+
+When you change `details.js`, `app.js`, or `style.css`, bump the `?v=` number on their links in **both** `index.html` and `resort.html` so browsers fetch the new copy.
 
 Resort facts (adults-only, check-in times, etc.) are in `index.html` under the `RESORT` comment.
 
