@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 300" >
+<defs>
+<filter id="wc" x="-8%" y="-8%" width="116%" height="116%" color-interpolation-filters="sRGB">
+  <feTurbulence type="fractalNoise" baseFrequency="0.03" numOctaves="3" seed="41" result="n1"/>
+  <feDisplacementMap in="SourceGraphic" in2="n1" scale="7" xChannelSelector="R" yChannelSelector="G" result="d"/>
+  <feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="2" seed="46" result="g"/>
+  <feColorMatrix in="g" type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  -0.45 0 0 0 1.2" result="gA"/>
+  <feTurbulence type="fractalNoise" baseFrequency="0.012" numOctaves="2" seed="50" result="m"/>
+  <feColorMatrix in="m" type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0.9 0 0 0 0.45" result="mA"/>
+  <feComposite in="d" in2="gA" operator="in" result="t1"/>
+  <feComposite in="t1" in2="mA" operator="in" result="t2"/>
+  <feMorphology in="d" operator="erode" radius="1.6" result="er"/>
+  <feComposite in="d" in2="er" operator="out" result="rim"/>
+  <feColorMatrix in="rim" type="matrix" values="0.55 0 0 0 0  0 0.55 0 0 0  0 0 0.55 0 0  0 0 0 0.4 0" result="rimD"/>
+  <feMerge><feMergeNode in="t2"/><feMergeNode in="rimD"/></feMerge>
+</filter>
+<radialGradient id="pet" cx="150" cy="150" r="140" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#9c1446"/><stop offset=".22" stop-color="#d42a63"/><stop offset=".6" stop-color="#f45d8a"/><stop offset="1" stop-color="#ffb3c6"/></radialGradient>
+<radialGradient id="pet2" cx="150" cy="150" r="140" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#8a1240"/><stop offset=".22" stop-color="#c8255a"/><stop offset=".6" stop-color="#ec5283"/><stop offset="1" stop-color="#ffa3bb"/></radialGradient>
+<radialGradient id="eye" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#5e0a2a"/><stop offset="1" stop-color="#a3174a" stop-opacity="0"/></radialGradient>
+<linearGradient id="col" x1="0" y1="1" x2="1" y2="0"><stop offset="0" stop-color="#c2185b"/><stop offset="1" stop-color="#ff7a9c"/></linearGradient>
+</defs>
+<g filter="url(#wc)">
+<g transform="rotate(200 150 150)"><path d="M150 150 C 190 140, 250 145, 290 150 C 250 165, 190 170, 150 150 Z" fill="#2f7a63"/><path d="M155 151 L 285 150" stroke="#a8d4bb" stroke-width="2" opacity=".6"/></g>
+<g transform="rotate(290 150 150)"><path d="M150 150 C 190 140, 250 145, 290 150 C 250 165, 190 170, 150 150 Z" fill="#3f8f72"/><path d="M155 151 L 285 150" stroke="#a8d4bb" stroke-width="2" opacity=".6"/></g>
+<g transform="rotate(10 150 150)"><path d="M150 150 C 92 128, 70 52, 112 22 C 128 12, 142 20, 150 30 C 158 18, 176 10, 192 22 C 232 52, 208 128, 150 150 Z" fill="url(#pet)"/>
+<path d="M150 146 Q 134.4 100 124 50" stroke="#8a1240" stroke-width="1.6" fill="none" opacity=".35"/>
+<path d="M150 146 Q 142.8 100 138 50" stroke="#8a1240" stroke-width="1.6" fill="none" opacity=".35"/>
+<path d="M150 146 Q 150.0 100 150 50" stroke="#8a1240" stroke-width="1.6" fill="none" opacity=".35"/>
+<path d="M150 146 Q 157.2 100 162 50" stroke="#8a1240" stroke-width="1.6" fill="none" opacity=".35"/>
+<path d="M150 146 Q 165.6 100 176 50" stroke="#8a1240" stroke-width="1.6" fill="none" opacity=".35"/>
+</g>
+<g transform="rotate(82 150 150)"><path d="M150 150 C 92 128, 70 52, 112 22 C 128 12, 142 20, 150 30 C 158 18, 176 10, 192 22 C 232 52, 208 128, 150 150 Z" fill="url(#pet2)"/>
+<path d="M150 146 Q 134.4 100 124 50" stroke="#8a1240" stroke-width="1.6" fill="none" opacity=".35"/>
+<path d="M150 146 Q 142.8 100 138 50" stroke="#8a1240" stroke-width="1.6" fill="none" opacity=".35"/>
+<path d="M150 146 Q 150.0 100 150 50" stroke="#8a1240" stroke-width="1.6" fill="none" opacity=".35"/>
+<path d="M150 146 Q 157.2 100 162 50" stroke="#8a1240" stroke-width="1.6" fill="none" opacity=".35"/>
+<path d="M150 146 Q 165.6 100 176 50" stroke="#8a1240" stroke-width="1.6" fill="none" opacity=".35"/>
+</g>
+<g transform="rotate(154 150 150)"><path d="M150 150 C 92 128, 70 52, 112 22 C 128 12, 142 20, 150 30 C 158 18, 176 10, 192 22 C 232 52, 208 128, 150 150 Z" fill="url(#pet)"/>
+<path d="M150 146 Q 134.4 100 124 50" stroke="#8a1240" stroke-width="1.6" fill="none" opacity=".35"/>
+<path d="M150 146 Q 142.8 100 138 50" stroke="#8a1240" stroke-width="1.6" fill="none" opacity=".35"/>
+<path d="M150 146 Q 150.0 100 150 50" stroke="#8a1240" stroke-width="1.6" fill="none" opacity=".35"/>
+<path d="M150 146 Q 157.2 100 162 50" stroke="#8a1240" stroke-width="1.6" fill="none" opacity=".35"/>
+<path d="M150 146 Q 165.6 100 176 50" stroke="#8a1240" stroke-width="1.6" fill="none" opacity=".35"/>
+</g>
+<g transform="rotate(226 150 150)"><path d="M150 150 C 92 128, 70 52, 112 22 C 128 12, 142 20, 150 30 C 158 18, 176 10, 192 22 C 232 52, 208 128, 150 150 Z" fill="url(#pet2)"/>
+<path d="M150 146 Q 134.4 100 124 50" stroke="#8a1240" stroke-width="1.6" fill="none" opacity=".35"/>
+<path d="M150 146 Q 142.8 100 138 50" stroke="#8a1240" stroke-width="1.6" fill="none" opacity=".35"/>
+<path d="M150 146 Q 150.0 100 150 50" stroke="#8a1240" stroke-width="1.6" fill="none" opacity=".35"/>
+<path d="M150 146 Q 157.2 100 162 50" stroke="#8a1240" stroke-width="1.6" fill="none" opacity=".35"/>
+<path d="M150 146 Q 165.6 100 176 50" stroke="#8a1240" stroke-width="1.6" fill="none" opacity=".35"/>
+</g>
+<g transform="rotate(298 150 150)"><path d="M150 150 C 92 128, 70 52, 112 22 C 128 12, 142 20, 150 30 C 158 18, 176 10, 192 22 C 232 52, 208 128, 150 150 Z" fill="url(#pet)"/>
+<path d="M150 146 Q 134.4 100 124 50" stroke="#8a1240" stroke-width="1.6" fill="none" opacity=".35"/>
+<path d="M150 146 Q 142.8 100 138 50" stroke="#8a1240" stroke-width="1.6" fill="none" opacity=".35"/>
+<path d="M150 146 Q 150.0 100 150 50" stroke="#8a1240" stroke-width="1.6" fill="none" opacity=".35"/>
+<path d="M150 146 Q 157.2 100 162 50" stroke="#8a1240" stroke-width="1.6" fill="none" opacity=".35"/>
+<path d="M150 146 Q 165.6 100 176 50" stroke="#8a1240" stroke-width="1.6" fill="none" opacity=".35"/>
+</g>
+<circle cx="150" cy="150" r="34" fill="url(#eye)"/>
+<path d="M150 150 C 172 122, 196 100, 222 74" stroke="url(#col)" stroke-width="7" fill="none" stroke-linecap="round"/>
+<circle cx="222" cy="74" r="5.5" fill="#ffc94a"/>
+<circle cx="230" cy="84" r="5.5" fill="#ffc94a"/>
+<circle cx="213" cy="66" r="5.5" fill="#ffc94a"/>
+<circle cx="236" cy="70" r="5.5" fill="#ffc94a"/>
+<circle cx="218" cy="86" r="5.5" fill="#ffc94a"/>
+<circle cx="205" cy="80" r="5.5" fill="#ffc94a"/>
+<circle cx="226" cy="62" r="5" fill="#d42a63"/>
+<circle cx="240" cy="78" r="5" fill="#d42a63"/>
+</g>
+</svg>
