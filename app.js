@@ -1,5 +1,6 @@
-// Fills the page from details.js. You shouldn't need to edit this file —
-// change details.js instead.
+// Fills the pages from details.js. You shouldn't need to edit this file —
+// change details.js instead. It runs on both index.html and our-story.html;
+// each block only runs if the page has the matching element.
 (function () {
   const W = window.WEDDING;
   if (!W) return;
@@ -9,6 +10,7 @@
   const esc = (s) =>
     String(s ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
   const setText = (sel, text) => $$(sel).forEach((el) => (el.textContent = text));
+  const fill = (sel, html) => { const el = $(sel); if (el) el.innerHTML = html; return el; };
 
   // ---- Names & date ----
   const { one, two } = W.couple;
@@ -17,15 +19,17 @@
   setText("[data-names-full]", `${one} & ${two}`);
   setText("[data-names-short]", `${one[0]} & ${two[0]}`);
   setText("[data-date-text]", W.dateText);
-  document.title = `${one} & ${two} · Riviera Maya 2028`;
+  document.title = document.body.dataset.page === "story"
+    ? `Our Story · ${one} & ${two}`
+    : `${one} & ${two} · Riviera Maya 2028`;
 
-  if (W.hashtag) {
+  if (W.hashtag && $("[data-hashtag]")) {
     const h = $("[data-hashtag]");
     h.textContent = W.hashtag;
     h.hidden = false;
   }
 
-  if (W.rsvp && W.rsvp.link) {
+  if (W.rsvp && W.rsvp.link && $("[data-rsvp-btn]")) {
     const b = $("[data-rsvp-btn]");
     b.href = W.rsvp.link;
     b.target = "_blank";
@@ -35,25 +39,27 @@
   }
 
   // ---- Countdown ----
-  const target = new Date(W.ceremonyStart).getTime();
-  function tick() {
-    let diff = Math.max(0, target - Date.now());
-    const days = Math.floor(diff / 864e5);
-    diff -= days * 864e5;
-    const hours = Math.floor(diff / 36e5);
-    diff -= hours * 36e5;
-    const mins = Math.floor(diff / 6e4);
-    $('[data-cd="days"]').textContent = days.toLocaleString();
-    $('[data-cd="hours"]').textContent = hours;
-    $('[data-cd="mins"]').textContent = mins;
+  if ($('[data-cd="days"]')) {
+    const target = new Date(W.ceremonyStart).getTime();
+    const tick = () => {
+      let diff = Math.max(0, target - Date.now());
+      const days = Math.floor(diff / 864e5);
+      diff -= days * 864e5;
+      const hours = Math.floor(diff / 36e5);
+      diff -= hours * 36e5;
+      const mins = Math.floor(diff / 6e4);
+      $('[data-cd="days"]').textContent = days.toLocaleString();
+      $('[data-cd="hours"]').textContent = hours;
+      $('[data-cd="mins"]').textContent = mins;
+    };
+    tick();
+    setInterval(tick, 30000);
   }
-  tick();
-  setInterval(tick, 30000);
 
   // ---- Updates ----
   const fmtDate = (iso) =>
     new Date(iso + "T12:00:00").toLocaleDateString("en-US", { month: "long", day: "numeric", year: "numeric" });
-  $("[data-updates]").innerHTML = (W.updates || [])
+  fill("[data-updates]", (W.updates || [])
     .map(
       (u, i) => `
       <article class="update${i === 0 ? " is-latest" : ""}">
@@ -62,10 +68,10 @@
         <p>${esc(u.text)}</p>
       </article>`
     )
-    .join("");
+    .join(""));
 
   // ---- Schedule ----
-  $("[data-schedule]").innerHTML = (W.schedule || [])
+  fill("[data-schedule]", (W.schedule || [])
     .map(
       (d) => `
       <div class="day${d.highlight ? " is-highlight" : ""}">
@@ -90,57 +96,152 @@
         </ol>
       </div>`
     )
-    .join("");
+    .join(""));
 
   // ---- Travel agent ----
   const A = W.agent;
-  setText("[data-agent-name]", A.name);
-  setText("[data-agent-first]", A.name.split(" ")[0]);
-  setText("[data-agent-company]", A.company);
-  setText("[data-agent-blurb]", A.blurb);
-  const subject = encodeURIComponent(`Booking for ${one} & ${two}'s wedding (April 13, 2028)`);
-  const mail = `mailto:${A.email}?subject=${subject}`;
-  $$("[data-agent-email], [data-agent-email-btn]").forEach((a) => (a.href = mail));
-  $("[data-agent-email] span").textContent = A.email;
-  $$("[data-agent-web], [data-agent-web-btn]").forEach((a) => (a.href = A.website));
-  $("[data-agent-web] span").textContent = A.website.replace(/^https?:\/\//, "").replace(/\/$/, "");
-  if (A.phone) {
-    const tel = "tel:" + A.phone.replace(/[^\d+]/g, "");
-    $("[data-agent-phone-row]").hidden = false;
-    $("[data-agent-phone]").href = tel;
-    $("[data-agent-phone] span").textContent = A.phone;
-    const c = $("[data-agent-call-btn]");
-    c.href = tel;
-    c.hidden = false;
-  }
-  if (A.bookBy) {
-    const b = $("[data-agent-bookby]");
-    b.textContent = `Please book by ${A.bookBy} to get the group rate.`;
-    b.hidden = false;
+  if (A && $("[data-agent-name]")) {
+    setText("[data-agent-name]", A.name);
+    setText("[data-agent-first]", A.name.split(" ")[0]);
+    setText("[data-agent-company]", A.company);
+    setText("[data-agent-blurb]", A.blurb);
+    const subject = encodeURIComponent(`Booking for ${one} & ${two}'s wedding (April 13, 2028)`);
+    const mail = `mailto:${A.email}?subject=${subject}`;
+    $$("[data-agent-email], [data-agent-email-btn]").forEach((a) => (a.href = mail));
+    $("[data-agent-email] span").textContent = A.email;
+    $$("[data-agent-web], [data-agent-web-btn]").forEach((a) => (a.href = A.website));
+    $("[data-agent-web] span").textContent = A.website.replace(/^https?:\/\//, "").replace(/\/$/, "");
+    if (A.phone) {
+      const tel = "tel:" + A.phone.replace(/[^\d+]/g, "");
+      $("[data-agent-phone-row]").hidden = false;
+      $("[data-agent-phone]").href = tel;
+      $("[data-agent-phone] span").textContent = A.phone;
+      const c = $("[data-agent-call-btn]");
+      c.href = tel;
+      c.hidden = false;
+    }
+    if (A.bookBy) {
+      const b = $("[data-agent-bookby]");
+      b.textContent = `Please book by ${A.bookBy} to get the group rate.`;
+      b.hidden = false;
+    }
   }
 
   // ---- FAQ ----
-  $("[data-faq]").innerHTML = (W.faq || [])
+  fill("[data-faq]", (W.faq || [])
     .map((f) => `<details class="faq-item"><summary>${esc(f.q)}</summary><p>${esc(f.a)}</p></details>`)
-    .join("");
+    .join(""));
 
-  // ---- Mobile nav ----
+  // ---- Our Story: text ----
+  const S = W.story || {};
+  fill("[data-story-text]", (S.paragraphs || []).map((p) => `<p>${esc(p)}</p>`).join(""));
+
+  // ---- Our Story: slideshow ----
+  const show = $("[data-slideshow]");
+  const photos = S.photos || [];
+  if (show && photos.length) {
+    const ms = Math.max(1, S.secondsPerPhoto || 3) * 1000;
+    show.style.setProperty("--ss-ms", ms + "ms");
+    const stage = show.querySelector("[data-slides]");
+    stage.innerHTML = photos
+      .map((_, i) => `<figure class="slide" aria-hidden="true"><div class="slide-bg"></div><img alt="Photo ${i + 1} of ${photos.length}"></figure>`)
+      .join("");
+    const slides = [...stage.children];
+    const count = show.querySelector("[data-ss-count]");
+    const pauseBtn = show.querySelector("[data-ss-pause]");
+    const progress = show.querySelector("[data-ss-progress]");
+    let cur = -1;
+    let timer = null;
+    let paused = false;
+
+    // Only load a photo when it's about to be shown (keeps the page fast on phones)
+    const load = (i) => {
+      const s = slides[i];
+      if (s.dataset.loaded) return;
+      s.dataset.loaded = "1";
+      s.querySelector("img").src = photos[i];
+      s.querySelector(".slide-bg").style.backgroundImage = `url("${photos[i]}")`;
+    };
+    const go = (i) => {
+      i = (i + photos.length) % photos.length; // wraps around to the start after the last photo
+      load(i);
+      load((i + 1) % photos.length);
+      if (cur >= 0) {
+        slides[cur].classList.remove("is-active");
+        slides[cur].setAttribute("aria-hidden", "true");
+      }
+      slides[i].classList.add("is-active");
+      slides[i].removeAttribute("aria-hidden");
+      cur = i;
+      count.textContent = `${i + 1} / ${photos.length}`;
+      // restart the little progress bar
+      progress.classList.remove("run");
+      void progress.offsetWidth;
+      if (!paused) progress.classList.add("run");
+    };
+    const start = () => { clearInterval(timer); if (!paused) timer = setInterval(() => go(cur + 1), ms); };
+    const step = (d) => { go(cur + d); start(); };
+    const setPaused = (p) => {
+      paused = p;
+      show.classList.toggle("is-paused", p);
+      pauseBtn.setAttribute("aria-label", p ? "Play slideshow" : "Pause slideshow");
+      pauseBtn.textContent = p ? "▶" : "❚❚";
+      if (p) { clearInterval(timer); progress.classList.remove("run"); }
+      else { go(cur); start(); }
+    };
+
+    show.querySelector("[data-ss-prev]").addEventListener("click", () => step(-1));
+    show.querySelector("[data-ss-next]").addEventListener("click", () => step(1));
+    pauseBtn.addEventListener("click", () => setPaused(!paused));
+    show.addEventListener("keydown", (e) => {
+      if (e.key === "ArrowLeft") step(-1);
+      if (e.key === "ArrowRight") step(1);
+    });
+    // swipe on phones
+    let sx = null;
+    show.addEventListener("touchstart", (e) => { sx = e.touches[0].clientX; }, { passive: true });
+    show.addEventListener("touchend", (e) => {
+      if (sx === null) return;
+      const dx = e.changedTouches[0].clientX - sx;
+      if (Math.abs(dx) > 40) step(dx < 0 ? 1 : -1);
+      sx = null;
+    });
+    // don't keep flipping while the tab is in the background
+    document.addEventListener("visibilitychange", () => {
+      if (document.hidden) clearInterval(timer);
+      else if (!paused) start();
+    });
+
+    go(0);
+    start();
+  }
+
+  // ---- Menu (hamburger) ----
   const toggle = $(".nav-toggle");
-  const links = $(".nav-links");
-  toggle.addEventListener("click", () => {
-    const open = links.classList.toggle("open");
-    toggle.setAttribute("aria-expanded", open);
-  });
-  links.addEventListener("click", (e) => {
-    if (e.target.tagName === "A") {
-      links.classList.remove("open");
-      toggle.setAttribute("aria-expanded", "false");
-    }
-  });
+  const menu = $(".nav-menu");
+  if (toggle && menu) {
+    const setOpen = (open) => {
+      menu.classList.toggle("open", open);
+      toggle.classList.toggle("is-open", open);
+      toggle.setAttribute("aria-expanded", open);
+      toggle.setAttribute("aria-label", open ? "Close menu" : "Open menu");
+    };
+    toggle.addEventListener("click", (e) => {
+      e.stopPropagation();
+      setOpen(!menu.classList.contains("open"));
+    });
+    menu.addEventListener("click", (e) => { if (e.target.closest("a")) setOpen(false); });
+    document.addEventListener("click", (e) => {
+      if (menu.classList.contains("open") && !menu.contains(e.target)) setOpen(false);
+    });
+    document.addEventListener("keydown", (e) => { if (e.key === "Escape") setOpen(false); });
+  }
 
   // Nav gets a solid background once you scroll past the top
   const nav = $(".nav");
-  const onScroll = () => nav.classList.toggle("scrolled", window.scrollY > 40);
-  onScroll();
-  window.addEventListener("scroll", onScroll, { passive: true });
+  if (nav) {
+    const onScroll = () => nav.classList.toggle("scrolled", window.scrollY > 40);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+  }
 })();

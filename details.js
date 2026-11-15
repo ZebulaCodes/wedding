@@ -90,4 +90,40 @@ window.WEDDING = {
     { q: "Do I need to bring cash?", a: "The resort is all-inclusive, so food and drinks are covered. A little cash (US dollars or Mexican pesos) is handy for tips, excursions, and shopping." },
     { q: "Do I have to stay at the resort?", a: "In order to attend and have access to the wedding, you will need to book a stay at either the Barceló Maya Riviera or the Barceló Maya Palace." },
   ],
+
+  // ---- Our Story page (our-story.html) --------------------------------
+  story: {
+    secondsPerPhoto: 3,
+    // The slideshow plays these in order, then loops back to the first.
+    // To add a photo: resize it and put it in images/story/, then add a line.
+    // (Don't link the originals in images/ — they're huge and contain GPS data.)
+    photos: [
+      "images/story/IMG_0081.jpg",
+      "images/story/IMG_0622.jpg",
+      "images/story/IMG_0702.jpg",
+      "images/story/IMG_1575.jpg",
+      "images/story/IMG_1576.jpg",
+      "images/story/IMG_1679.jpg",
+      "images/story/IMG_1934.jpg",
+      "images/story/IMG_2083.jpg",
+      "images/story/IMG_2144.jpg",
+      "images/story/IMG_2714.jpg",
+      "images/story/IMG_3475.jpg",
+      "images/story/IMG_4148.jpg",
+      "images/story/IMG_4529.jpg",
+      "images/story/IMG_5622.jpg",
+      "images/story/IMG_7305.jpg",
+      "images/story/IMG_7842.jpg",
+      "images/story/IMG_7893.jpg",
+      "images/story/IMG_8047.jpg",
+      "images/story/IMG_8662.jpg",
+      "images/story/IMG_9005.jpg",
+      "images/story/IMG_9041.jpg",
+      "images/story/IMG_9932.jpg",
+    ],
+    // Your story — each "..." is its own paragraph. Add as many as you like.
+    paragraphs: [
+      "Our story is coming soon! Check back to read how we met, our first date, and how the proposal happened.",
+    ],
+  },
 };

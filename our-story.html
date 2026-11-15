@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Our Story · Riviera Maya 2028</title>
+  <meta name="description" content="Our story, in pictures — wedding April 13, 2028 at Barceló Maya Riviera, Mexico.">
+  <meta property="og:title" content="Our Story">
+  <meta property="og:image" content="images/us-small.jpg">
+  <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:ital,wght@0,600;0,700;1,500&family=Nunito+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css?v=10">
+</head>
+<body data-page="story">
+
+  <!-- ===================== NAV (same block is in index.html) ===================== -->
+  <header class="nav" id="top">
+    <a class="nav-brand" href="index.html" data-names-short>Our Wedding</a>
+    <div class="nav-right">
+      <a href="index.html#travel" class="nav-cta">Book Travel</a>
+      <button class="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="nav-menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <nav id="nav-menu" class="nav-menu" aria-label="Site menu">
+      <a href="index.html" class="nav-page"><span aria-hidden="true">🏠</span> Home</a>
+      <a href="our-story.html" class="nav-page" aria-current="page"><span aria-hidden="true">💕</span> Our Story</a>
+      <p class="nav-group">Jump to</p>
+      <a href="index.html#updates">Updates</a>
+      <a href="index.html#schedule">Schedule</a>
+      <a href="index.html#travel">Travel with Mandy</a>
+      <a href="index.html#resort">The Resort</a>
+      <a href="index.html#faq">FAQ</a>
+    </nav>
+  </header>
+
+  <!-- ===================== STORY ===================== -->
+  <section class="story-hero">
+    <img class="hero-bg" src="images/sunset.svg" alt="" aria-hidden="true">
+    <img class="deco palm-left" src="images/palm-tree-paint.svg" alt="" aria-hidden="true">
+    <img class="deco palm-right" src="images/palm-tree-paint-flip.svg" alt="" aria-hidden="true">
+    <img class="deco hero-bop-l" src="images/bird-of-paradise.svg" alt="" aria-hidden="true">
+    <img class="deco hero-bop-r" src="images/bird-of-paradise.svg" alt="" aria-hidden="true">
+
+    <div class="story-inner">
+      <h1 class="page-title">Our Story</h1>
+
+      <!-- Slideshow: photos come from details.js → story.photos -->
+      <div class="slideshow" data-slideshow tabindex="0" role="region" aria-roledescription="slideshow" aria-label="Photos of us">
+        <div class="slides" data-slides></div>
+        <button class="ss-btn ss-prev" data-ss-prev aria-label="Previous photo">‹</button>
+        <button class="ss-btn ss-next" data-ss-next aria-label="Next photo">›</button>
+        <div class="ss-bar">
+          <button class="ss-pause" data-ss-pause aria-label="Pause slideshow">❚❚</button>
+          <span class="ss-count" data-ss-count aria-live="polite"></span>
+        </div>
+        <div class="ss-progress"><span data-ss-progress></span></div>
+      </div>
+    </div>
+    <svg class="wave" viewBox="0 0 1440 80" preserveAspectRatio="none" aria-hidden="true"><path d="M0 40 C 240 90 480 0 720 30 C 960 60 1200 10 1440 40 L1440 80 L0 80 Z"/></svg>
+  </section>
+
+  <main>
+    <section class="section section-story">
+      <img class="deco story-frond" src="images/palm-frond-paint.svg" alt="" aria-hidden="true">
+      <div class="container narrow">
+        <h2 class="section-title">How It All Began</h2>
+        <!-- Story text comes from details.js → story.paragraphs -->
+        <div class="story-text" data-story-text></div>
+        <p class="story-sign" data-names-full>Tanner Bessinger &amp; Madison Parenti</p>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="footer">
+    <img class="deco foot-palm-l" src="images/palm-tree.svg" alt="" aria-hidden="true">
+    <img class="deco foot-palm-r" src="images/palm-tree-flip.svg" alt="" aria-hidden="true">
+    <p class="footer-names" data-names-full>Tanner Bessinger &amp; Madison Parenti</p>
+    <p class="footer-date">04 · 13 · 2028 &nbsp;·&nbsp; Riviera Maya, Mexico</p>
+    <p class="footer-small">Made with love (and sunscreen).</p>
+  </footer>
+
+  <!-- Floating booking button on phones -->
+  <a class="float-book" href="index.html#travel">✈ Book with Mandy</a>
+
+  <script src="details.js?v=10"></script>
+  <script src="app.js?v=10"></script>
+</body>
+</html>

@@ -14,6 +14,7 @@ Almost everything guests see lives in **`details.js`**:
 | Travel agent (Mandy) | `agent` — add `phone` to show the Call button, `bookBy` for the room-block deadline |
 | RSVP button | `rsvp.link` (e.g. a Google Form) and `rsvp.deadline` |
 | FAQ | `faq` |
+| Our Story page (`our-story.html`) | `story` — `paragraphs` for your story text, `photos` for the slideshow, `secondsPerPhoto` for speed |
 
 Resort facts (adults-only, check-in times, etc.) are in `index.html` under the `RESORT` comment.
 
@@ -38,3 +39,7 @@ Optional: a custom domain (like `ourname-wedding.com`) can be added under **Sett
 ## Previewing locally
 
 Just double-click `index.html` — it works straight from the file system.
+
+## Adding Our Story photos
+
+Don't link the original phone photos: they're huge and contain GPS location data. Resize a copy (about 1400px on the long side, saved without metadata) into `images/story/`, then add its path to `story.photos` in `details.js`. The originals (`images/IMG_*`) are listed in `.gitignore` so they never get pushed.
