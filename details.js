@@ -123,29 +123,29 @@ window.WEDDING = {
     ],
     // Your story — each "..." is its own paragraph. Add as many as you like.
     paragraphs: [
-      `Some love stories begin in a hometown, through mutual friends, or in a classroom. Ours started nearly 2,300 miles from home, thanks to a six-month work assignment and a swipe on Tinder.
+      `Some love stories begin in a hometown, through mutual friends, or in a classroom. Ours started nearly 2,300 miles from home, thanks to a six-month work assignment and a swipe on Tinder.\n
 
-      In 2018, Tanner traded the mountains of Utah for the beaches of Florida when work sent him to Cape Canaveral to support projects at Kennedy Space Center. After about a month of settling into life on the Space Coast, he decided to try his luck on Tinder. Within the first week, he matched with a Florida native named Erin.
+      In 2018, Tanner traded the mountains of Utah for the beaches of Florida when work sent him to Cape Canaveral to support projects at Kennedy Space Center. After about a month of settling into life on the Space Coast, he decided to try his luck on Tinder. Within the first week, he matched with a Florida native named Maddi.\n
 
-      As luck would have it, Erin lived just two blocks from where Tanner was staying. Convenient? Absolutely. Coincidental? Maybe. A great excuse to spend time together? Definitely.
+      As luck would have it, Maddi lived just two blocks from where Tanner was staying. Convenient? Absolutely. Coincidental? Maybe. A great excuse to spend time together? Definitely.\n
 
-      Their first few dates quickly turned into something more. In fact, the first time Tanner visited Erin's apartment, he found himself helping assemble a cat tower for her newly adopted black cat, Oscar. Most people bring flowers or a bottle of wine on an early visit. Tanner brought free labor and a willingness to follow confusing assembly instructions. Thankfully, both the cat tower and the relationship survived.
+      Their first few dates quickly turned into something more. In fact, the first time Tanner visited Maddi's apartment, he found himself helping assemble a cat tower for her newly adopted black cat, Oscar. Most people bring flowers or a bottle of wine on an early visit. Tanner brought free labor and a willingness to follow confusing assembly instructions. Thankfully, both the cat tower and the relationship survived.\n
 
-      Over the following months, the two became inseparable. What started as a temporary six-month work assignment turned into a year-long stay as Tanner extended his time in Florida. As the end of that year approached, they faced an important decision about what came next.
+      Over the following months, the two became inseparable. What started as a temporary six-month work assignment turned into a year-long stay as Tanner extended his time in Florida. As the end of that year approached, they faced an important decision about what came next.\n
 
-      While Florida had become home in many ways, Utah was where Tanner ultimately needed to be. Without hesitation, Erin made the life-changing decision to pack up everything she knew and start a new adventure across the country.
+      While Florida had become home in many ways, Utah was where Tanner ultimately needed to be. Without hesitation, Maddi made the life-changing decision to pack up everything she knew and start a new adventure across the country.\n
 
-      In March 2019, we moved to Utah and into our very first apartment together. It wasn't fancy, but it was ours. We filled it with memories, laughter, late-night takeout, Oscar's endless antics, and all the little moments that turned a shared space into a home.
+      In March 2019, we moved to Utah and into our very first apartment together. It wasn't fancy, but it was ours. We filled it with memories, laughter, late-night takeout, Oscar's endless antics, and all the little moments that turned a shared space into a home.\n
 
-      Then in 2022, we took another big step and built our first home together. The house became more than just walls and a roof. It became the place where we continued building our life, creating new memories, and dreaming about everything still to come.
+      Then in 2022, we took another big step and built our first home together. The house became more than just walls and a roof. It became the place where we continued building our life, creating new memories, and dreaming about everything still to come.\n
 
-      Along the way, we've been fortunate enough to travel together to some incredible places, including California, South Africa, Cabo San Lucas, Las Vegas, Moab, and many others. Every trip added another chapter to our story, but one destination stood out from the rest: Mexico.
+      Along the way, we've been fortunate enough to travel together to some incredible places, including California, South Africa, Cabo San Lucas, Las Vegas, Moab, and many others. Every trip added another chapter to our story, but one destination stood out from the rest: Mexico.\n
 
-      The beaches, the atmosphere, and the memories we made there left such an impression that years later, choosing Mexico as our wedding destination felt like the easiest decision in the world.
+      The beaches, the atmosphere, and the memories we made there left such an impression that years later, choosing Mexico as our wedding destination felt like the easiest decision in the world.\n
 
-      On April 13, 2028, exactly ten years after we first got together, we'll be celebrating our wedding at the Barceló Maya Riviera surrounded by the people we love most. What began with a chance swipe, a black cat named Oscar, and an unexpectedly assembled cat tower has grown into a decade of partnership, adventure, and unwavering support.
+      On April 13, 2028, exactly ten years after we first got together, we'll be celebrating our wedding at the Barceló Maya Riviera surrounded by the people we love most. What began with a chance swipe, a black cat named Oscar, and an unexpectedly assembled cat tower has grown into a decade of partnership, adventure, and unwavering support.\n
 
-      As we look ahead, we're excited for all the things still to come: more travels, more laughs, more memories, and a lifetime of choosing each other every day.
+      As we look ahead, we're excited for all the things still to come: more travels, more laughs, more memories, and a lifetime of choosing each other every day.\n
 
       This is our story so far, and we're so grateful you've been a part of it. The next chapter begins in Mexico, and we can't wait to celebrate it with you.`,
     ],
