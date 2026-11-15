@@ -93,7 +93,7 @@ window.WEDDING = {
 
   // ---- Our Story page (our-story.html) --------------------------------
   story: {
-    secondsPerPhoto: 3,
+    secondsPerPhoto: 5,
     // The slideshow plays these in order, then loops back to the first.
     // To add a photo: resize it and put it in images/story/, then add a line.
     // (Don't link the originals in images/ — they're huge and contain GPS data.)

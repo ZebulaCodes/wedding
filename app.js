@@ -147,12 +147,9 @@
       .map((_, i) => `<figure class="slide" aria-hidden="true"><div class="slide-bg"></div><img alt="Photo ${i + 1} of ${photos.length}"></figure>`)
       .join("");
     const slides = [...stage.children];
-    const count = show.querySelector("[data-ss-count]");
-    const pauseBtn = show.querySelector("[data-ss-pause]");
     const progress = show.querySelector("[data-ss-progress]");
     let cur = -1;
     let timer = null;
-    let paused = false;
 
     // Only load a photo when it's about to be shown (keeps the page fast on phones)
     const load = (i) => {
@@ -173,43 +170,17 @@
       slides[i].classList.add("is-active");
       slides[i].removeAttribute("aria-hidden");
       cur = i;
-      count.textContent = `${i + 1} / ${photos.length}`;
-      // restart the little progress bar
+      // restart the thin progress line along the bottom
       progress.classList.remove("run");
       void progress.offsetWidth;
-      if (!paused) progress.classList.add("run");
+      progress.classList.add("run");
     };
-    const start = () => { clearInterval(timer); if (!paused) timer = setInterval(() => go(cur + 1), ms); };
-    const step = (d) => { go(cur + d); start(); };
-    const setPaused = (p) => {
-      paused = p;
-      show.classList.toggle("is-paused", p);
-      pauseBtn.setAttribute("aria-label", p ? "Play slideshow" : "Pause slideshow");
-      pauseBtn.textContent = p ? "▶" : "❚❚";
-      if (p) { clearInterval(timer); progress.classList.remove("run"); }
-      else { go(cur); start(); }
-    };
+    const start = () => { clearInterval(timer); timer = setInterval(() => go(cur + 1), ms); };
 
-    show.querySelector("[data-ss-prev]").addEventListener("click", () => step(-1));
-    show.querySelector("[data-ss-next]").addEventListener("click", () => step(1));
-    pauseBtn.addEventListener("click", () => setPaused(!paused));
-    show.addEventListener("keydown", (e) => {
-      if (e.key === "ArrowLeft") step(-1);
-      if (e.key === "ArrowRight") step(1);
-    });
-    // swipe on phones
-    let sx = null;
-    show.addEventListener("touchstart", (e) => { sx = e.touches[0].clientX; }, { passive: true });
-    show.addEventListener("touchend", (e) => {
-      if (sx === null) return;
-      const dx = e.changedTouches[0].clientX - sx;
-      if (Math.abs(dx) > 40) step(dx < 0 ? 1 : -1);
-      sx = null;
-    });
     // don't keep flipping while the tab is in the background
     document.addEventListener("visibilitychange", () => {
       if (document.hidden) clearInterval(timer);
-      else if (!paused) start();
+      else { go(cur + 1); start(); }
     });
 
     go(0);
